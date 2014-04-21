@@ -1,9 +1,17 @@
+var Person =  function(name, age) {
+	this.name = name;
+	this.age =  age;
+	this.city = 'Boulder';
+};
+
 //The Student Class
 
-var Student = function(name){
+var Student = function(name, age){
 	this.name = name;
+	this.age = age;
 	this.grades = [];
 	
+
 //Prompt's the student for the score, this pushes to grades
 
 	this.takeTest = function(){
@@ -22,6 +30,8 @@ this.currentGrade = function() {
 	};
 };
 
+Student.prototype = new Person();
+
 var Classroom = function(teacher, subject) {
 	this.students = [];
 	this.name = name;
@@ -29,13 +39,16 @@ var Classroom = function(teacher, subject) {
 	this.teacher = teacher;
 };
 
-var Teacher = function(fullName, subjects) {
+var Teacher = function(fullName, age, subjects) {
 	this.name = fullName;
+	this.age = age;
 	this.subjects = [];
 }
 
-var tom = new Student('Tom');
-var sarah = new Student('Sarah');
+Teacher.prototype = new Person();
+
+var tom = new Student('Tom', 35);
+var sarah = new Student('Sarah', 30);
 
 //tom.takeTest();
 //prompts user to enter their score, prompt score is pushed to grades array
@@ -58,9 +71,9 @@ sarah.currentGrade();
 //logs 98.333
 
 
-var raine = new Teacher('Raine', ['JavaScript', 'C++', 'Racket']); 
-var chris = new Teacher('Raine', ['JavaScript', 'C#', 'Action Script']);
-var sean = new Teacher('Sean', []);
+var raine = new Teacher('Raine', 29, ['JavaScript', 'C++', 'Racket']); 
+var chris = new Teacher('Raine', 27, ['JavaScript', 'C#', 'Action Script']);
+var sean = new Teacher('Sean', 35, []);
 
 var teachers = [raine, chris, sean];
 
