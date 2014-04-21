@@ -43,6 +43,8 @@ Object Oriented Programming (OOP)
 			points to the "host object"
 				new instance
 
+		Composition - nesting objects in other objects
+
 
 
 
